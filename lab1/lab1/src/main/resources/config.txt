@@ -1,0 +1,9 @@
+POP=ru.nsu.ccfit.violin.operation.PopD;
+PUSH=ru.nsu.ccfit.violin.operation.PushD;
++=ru.nsu.ccfit.violin.operation.PlusD;
+-=ru.nsu.ccfit.violin.operation.MinusD;
+*=ru.nsu.ccfit.violin.operation.ProductD;
+/=ru.nsu.ccfit.violin.operation.DivisionD;
+SQRT=ru.nsu.ccfit.violin.operation.SqrtD;
+PRINT=ru.nsu.ccfit.violin.operation.PrintD;
+DEFINE=ru.nsu.ccfit.violin.operation.DefineD;
