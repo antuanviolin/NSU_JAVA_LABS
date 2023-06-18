@@ -41,17 +41,17 @@ public class CommandParser implements AutoCloseable {
             }
         }
 
-        Main.logger.log(Level.INFO, "Line parsed \""+line+"\" ");
+        //Main.logger.log(Level.INFO, "Line parsed \""+line+"\" ");
         return line;
     }
 
     public void linkWithFile(String filePath) throws FileNotFoundException {
         inStream = new Scanner(new FileReader(filePath));
-        Main.logger.log(Level.INFO, "Parser linked with \""+filePath+"\"");
+        //Main.logger.log(Level.INFO, "Parser linked with \""+filePath+"\"");
     }
     public void linkWithConsole() {
         inStream = new Scanner(new InputStreamReader(System.in));
-        Main.logger.log(Level.INFO, "Parser linked with console");
+        //Main.logger.log(Level.INFO, "Parser linked with console");
     }
 
     @Override

@@ -36,7 +36,7 @@ public class OperationFactory<T> {
             operation = generateOperation(newOperationName);
             alreadyCreated.merge(newOperationName, operation, (x, y) -> y);
         } else {
-            Main.logger.log(Level.INFO, newOperationName+" already created, returned an existing object "+operation.toString());
+            //Main.logger.log(Level.INFO, newOperationName+" already created, returned an existing object "+operation.toString());
         }
         if(operation instanceof CustomizableOperation op) {
             op.set(commandInfo);
@@ -108,7 +108,7 @@ public class OperationFactory<T> {
         } catch(InstantiationException | IllegalAccessException | InvocationTargetException e){
             throw new OperationInstantiationError(OperationName, e);
         }
-        Main.logger.log(Level.INFO, newOperation.toString()+" is generated");
+        //Main.logger.log(Level.INFO, newOperation.toString()+" is generated");
         return newOperation;
     }
 }

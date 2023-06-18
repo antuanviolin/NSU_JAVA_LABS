@@ -2,9 +2,9 @@ package ru.nsu.ccfit.violin.calcException;
 
 import ru.nsu.ccfit.violin.operation.Operation;
 
-public class OperationZeroDivision extends java.lang.ArithmeticException {
+public class OperationZeroDivision extends OperationException {
     public OperationZeroDivision(Operation<?> op){
-        super(op.toString());
+        super(op);
     }
 
     @Override

@@ -15,19 +15,19 @@ import java.util.logging.*;
 public class Main {
     public static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) throws Exception {
-        try {
+       /*try {
             LogManager.getLogManager().readConfiguration(new FileInputStream("/logging.properties"));
         } catch (IOException e) {
             System.out.println("Logging haven't launched");
             System.out.println(e.getMessage());
-        }
+        }*/
 
         try (CommandParser parser = new CommandParser(args)) {
             Calculator<Double> calculator = new CalculatorDouble();
             OperationFactory<Double> factory = new OperationFactory<>();
 
-            System.out.println("Ready to execute commands!");
-            logger.log(Level.INFO, "Program start");
+            //System.out.println("Ready to execute commands!");
+            //logger.log(Level.INFO, "Program start");
 
             while (parser.ready()) {
                 String command = parser.nextLine();
@@ -43,11 +43,11 @@ public class Main {
                 }
             }
 
-            System.out.println("Shutting down.");
+            //System.out.println("Shutting down.");
             logger.log(Level.INFO, "Shutting down.");
         } catch (ConfigurationError | FileNotFoundException e) {
             logger.log(Level.SEVERE, e.getMessage());
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
         }
     }
 }

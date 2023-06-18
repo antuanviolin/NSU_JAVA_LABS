@@ -17,13 +17,13 @@ public class CalculatorDouble implements Calculator<Double> {
 
     @Override
     public void execute(Operation<Double> operation) {
-        Main.logger.log(Level.INFO, operation.toString()+" starts to execute by calculator.");
+        //Main.logger.log(Level.INFO, operation.toString()+" starts to execute by calculator.");
         if(operation instanceof ArithmeticOperation){
             try {
                 operation.apply(stack);
             } catch (OperationException e){
                 System.out.println(e.getMessage());
-                Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
+                //Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
             }
         }
         else if (operation instanceof StackOperation){
@@ -31,7 +31,7 @@ public class CalculatorDouble implements Calculator<Double> {
                 operation.apply(stack, context);
             } catch (StackException | OperationException | OperationConfigurationError e) {
                 System.out.println(e.getMessage());
-                Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
+                //Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
             }
         }
         else if (operation instanceof ContextOperation){
@@ -39,7 +39,7 @@ public class CalculatorDouble implements Calculator<Double> {
                 operation.apply(context);
             } catch (OperationException e) {
                 System.out.println(e.getMessage());
-                Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
+                //Main.logger.log(Level.WARNING, operation.toString()+"---"+e.getMessage());
             }
         }
     }

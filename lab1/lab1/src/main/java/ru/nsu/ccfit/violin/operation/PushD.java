@@ -29,7 +29,7 @@ public class PushD implements StackOperation<Double>, CustomizableOperation {
             throw new NotEnoughOperandToConfigure(this);
         } else {
             arg = option[1];
-            Main.logger.log(Level.INFO, this.toString()+" is configured by "+arg);
+            //Main.logger.log(Level.INFO, this.toString()+" is configured by "+arg);
         }
     }
 }
