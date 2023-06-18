@@ -124,10 +124,11 @@ class MainWindow extends JFrame {
             public void windowIconified(WindowEvent event) {}
             public void windowOpened(WindowEvent event) {}
             public void windowClosing(WindowEvent event) {
-                Object[] options = { "Да", "Нет" };
+                controller.execute(CommandTetris.Pause);
+                Object[] options = { "Yes", "No" };
                 int rc = JOptionPane.showOptionDialog(
-                        event.getWindow(), "Закрыть окно?",
-                        "Подтверждение", JOptionPane.YES_NO_OPTION,
+                        event.getWindow(), "Close window?",
+                        "", JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE,
                         new ImageIcon("resources/images/question_head.png"),
                         null, options);
@@ -141,6 +142,7 @@ class MainWindow extends JFrame {
                     myGui.interrupt();
                     dispose();
                 }
+                controller.execute(CommandTetris.Resume);
             }
         });
 

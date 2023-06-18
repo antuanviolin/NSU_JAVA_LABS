@@ -125,6 +125,7 @@ public class Tetris extends Thread implements Subject {
 
     public void newGame() {
         System.out.println("NEW GAME");
+        gameRunning = false;
         renewGameState();
     }
 

@@ -152,6 +152,7 @@ class RightBank extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 controller.execute(CommandTetris.NewGamePrepare);
                 pkg.getPlayersStatistics().merge(Package.getNickname(), pkg.getScore(), Integer::max);
+                controller.execute(CommandTetris.Resume);
                 ngButton.setFocusable(false);
                 myFrame.getBackFocus();
             }
